@@ -38,11 +38,11 @@ class Counter extends Component {
         );
     }
 }
-                        //this state is coming from reducer.js
+                        //this state is coming  from reducer.js
 const mapStateToProps = state => {
     return {
       ctr : state.counter
     };
 }
-//connect is helper component to pass state as props to my component
+//connect is helper component to  pass state as props to my component
 export default connect(mapStateToProps)(Counter);

@@ -11,6 +11,6 @@ import reducer from './store/reducer';
 //pass the reducer
 const store = createStore(reducer);
 
-//provide needed to pass store to components
+//provide needed  to pass store to components
 ReactDOM.render(<Provider store = {store}><App /></Provider> , document.getElementById('root'));
 registerServiceWorker();
