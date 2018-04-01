@@ -34,14 +34,23 @@ class Counter extends Component {
                 <CounterControl label="Decrement" clicked={this.props.onDecrementCounter}  />
                 <CounterControl label="Add 10" clicked={this.props.addCounter}  />
                 <CounterControl label="Subtract 15" clicked={this.props.subtractCounter}  />
+                <hr/>
+                <button onClick={this.props.onStoreResult}>Store Result</button>
+                <ul>
+                  {this.props.storedResults.map(strResult => (
+                      <li key={strResult.id}onClick={this.props.onDeleteResult}>{strResult.value}</li>
+                  ))}
+                </ul>
             </div>
         );
     }
 }
                         //this state is coming  from reducer.js
 const mapStateToProps = state => {
+    console.log('updated state', state);
     return {
-      ctr : state.counter
+      ctr : state.counter,
+      storedResults: state.results
     };
 };
 
@@ -51,7 +60,9 @@ const mapDispatchToProps = dispatch => {
         onDecrementCounter: () => dispatch({type: 'DECREMENT'}),
         addCounter: () => dispatch({type: 'ADD', val: 10}),
         // 2 different way of passing action: payload or just a key/val pair
-        subtractCounter: () => dispatch({type: 'SUBTRACT', payload: {val: 15}})
+        subtractCounter: () => dispatch({type: 'SUBTRACT', payload: {val: 15}}),
+        onStoreResult: () => dispatch({type: 'STORE_RESULT'}),
+        onDeleteResult: () => dispatch({type: 'DELETE_RESULT'})
     };
 
 };
