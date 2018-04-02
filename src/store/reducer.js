@@ -4,7 +4,7 @@
 
 const initialState = {
     counter: 0,
-     results : []
+    results : []
 }
 
 const reducer = (state = initialState, action ) => {
@@ -34,10 +34,20 @@ const reducer = (state = initialState, action ) => {
                 counter: state.counter - action.payload.val
             }
         case 'STORE_RESULT' :
- console.log('before update state ',state);
+            console.log('before update state ',state);
             return {
                 ...state,
                 results: state.results.concat({id: new Date(), value: state.counter})
+            }
+        case 'DELETE_RESULT' :
+            //const id = 2;
+            //const updatedArray = [...state.results];
+            //updatedArray.splice(id,1);
+            //const updatedArray = state.results.filter(result => true) is return a new array. same with [...state]
+            const updatedArray = state.results.filter(result => result.id !== action.resultElId);
+            return {
+                ...state,
+                results: updatedArray
             }
     }
 
