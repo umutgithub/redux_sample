@@ -1,6 +1,7 @@
  /**
  * Created by usevil on 3/30/18.
  */
+import * as actionTypes from './actions';
 
 const initialState = {
     counter: 0,
@@ -9,7 +10,7 @@ const initialState = {
 
 const reducer = (state = initialState, action ) => {
     switch(action.type) {
-        case 'INCREMENT' :
+        case actionTypes.INCREMENT :
             return {
             ...state,
             counter: state.counter + 1
@@ -18,28 +19,28 @@ const reducer = (state = initialState, action ) => {
             //newState.counter = state.counter + 1;
             //counter: state.counter + 1
             //return newState;
-        case 'DECREMENT' :
+        case actionTypes.DECREMENT :
             return {
                 ...state,
                 counter: state.counter - 1
             }
-        case 'ADD' :
+        case actionTypes.ADD :
             return {
                 ...state,
                 counter: state.counter + action.val
             }
-        case 'SUBTRACT' :
+        case actionTypes.SUBTRACT :
             return {
                 ...state,
                 counter: state.counter - action.payload.val
             }
-        case 'STORE_RESULT' :
+        case actionTypes.STORE_RESULT :
             console.log('before update state ',state);
             return {
                 ...state,
                 results: state.results.concat({id: new Date(), value: state.counter})
             }
-        case 'DELETE_RESULT' :
+        case actionTypes.DELETE_RESULT :
             //const id = 2;
             //const updatedArray = [...state.results];
             //updatedArray.splice(id,1);
