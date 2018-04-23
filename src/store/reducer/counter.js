@@ -2,7 +2,7 @@
  * Created by usevil on 4/2/18.
  */
 
-import * as actionTypes from '../actions/actions';
+import * as actionTypes from '../actions/actionsTypes';
 
 const initialState = {
     counter: 0
