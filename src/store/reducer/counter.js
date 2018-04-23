@@ -32,7 +32,7 @@ const reducer = (state = initialState, action ) => {
         case actionTypes.SUBTRACT :
             return {
                 ...state,
-                counter: state.counter - action.payload.val
+                counter: state.counter - action.val
             }
     }
 
