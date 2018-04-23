@@ -15,7 +15,7 @@ export const decrement = () => {
 export const add = (value) => {
     return {
         type: actionTypes.ADD,
-        val: value
+        val: value     /*this "val" key is the one in reducer action.val*/
     }
 };
 
