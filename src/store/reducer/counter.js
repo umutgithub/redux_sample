@@ -2,7 +2,7 @@
  * Created by usevil on 4/2/18.
  */
 
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
     counter: 0
@@ -32,7 +32,7 @@ const reducer = (state = initialState, action ) => {
         case actionTypes.SUBTRACT :
             return {
                 ...state,
-                counter: state.counter - action.payload.val
+                counter: state.counter - action.val
             }
     }
 

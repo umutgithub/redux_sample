@@ -20,10 +20,10 @@ const rootReducer = combineReducers({
 const logger = store => {
      return next => {
          return action => {   //action is the action we dispatch
-            console.log('[middleware dispathing]' , action);
+            // console.log('[middleware dispathing]' , action);
             const result = next(action);
-            console.log('[result ]' , result);
-            console.log('[middleware nextstate]', store.getState());
+            // console.log('[result ]' , result);
+            // console.log('[middleware nextstate]', store.getState());
             return result;
          }
      }
